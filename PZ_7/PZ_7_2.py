@@ -1,5 +1,5 @@
 def count_words(input_string):
-    words = input_string.split()  # Разделяет строку на список слов по пробелам
+    words = input_string.split()  # Раздляет строку на список слов по пробелам
     word_count = len(words)  # Подсчитывает количество элементов в списке
     return word_count
 
