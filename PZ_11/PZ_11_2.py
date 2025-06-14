@@ -1,0 +1,22 @@
+# Чтение исходного файла и вывод содержимого
+with open('text18-27.txt', 'r', encoding='utf-16') as f:
+    content = f.read()
+    print("Содержимое файла:")
+    print(content)
+
+# Подсчет количества пробельных символов
+space_count = sum(1 for c in content if c.isspace())
+print(f"\nКоличество пробельных символов: {space_count}")
+
+# Получение строки от пользователя
+user_line = input("\nВведите фразу для последней строки стихотворения: ")
+
+# Формирование нового файла в стихотворной форме с новой последней строкой
+lines = content.strip().split('\n')
+lines[-1] = user_line  # заменяем последнюю строку на пользовательскую
+
+with open('poem_result.txt', 'w', encoding='utf-16') as f:
+    for line in lines:
+        f.write(line + '\n')
+
+print("\nНовый файл 'poem_result.txt' создан.")
